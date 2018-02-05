@@ -76,7 +76,6 @@ function reset() {
     scaryTerry.health = 100
     scaryTerry.hits = 0
     document.getElementById("result").innerHTML = `
-    <img src="https://occ-0-2433-1001.1.nflxso.net/art/34326/5d6e1471b3937f2a08ec0d1f53a8e294f5634326.png" class="title"alt="Rick and Morty">
     <p>Beat Scary Terry!</p>
     <p>Select a Mod (green) first then your Attack (red) to add more damage!</p>`
     return update()
@@ -120,7 +119,7 @@ function giveNeutrinoBomb() {
 }
 //comp randomized attack
 function compAttack() {
-    var slap = (Math.floor(Math.random() * 10) + 1)
+    var slap = (Math.floor(Math.random() * 12) + 1)
     rick.health -= slap
     rick.hits++
     if (rick.health <= 0) {
