@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SlapGame</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/main.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row" id="target">
+            <div class="col-12" id="result" text="center">
+                <img src="https://occ-0-2433-1001.1.nflxso.net/art/34326/5d6e1471b3937f2a08ec0d1f53a8e294f5634326.png" class="title"alt="Rick and Morty">
+                <p>Beat Scary Terry!</p>
+                <p>Select a Mod (green) first then your Attack (red) to add more damage!</p>
+            </div>
+            <div class="col-md-3 col-sm-5">
+                <div class="user-player">
+                    <div class="health-bar">
+                        <div>
+                            <h2>Rick's Health:
+                                <span id="user-health"></span>
+                            </h2>
+                        </div>
+                    </div>
+                    <div>
+                        <h2>Hits:
+                            <span id="user-hits"></span>
+                        </h2>
+                    </div>
+                    <img src="http://i.imgur.com/XLjssWe.png" class="rick" alt="Rick png">
+                    <div class="attacks">
+                        <button type="button" class="btn btn-danger" data-toggle="button" id="freeze-gun" onClick="freezeGun(), compAttack()">Freeze Gun</button>
+                        <button type="button" class="btn btn-danger" data-toggle="button" id="laser-gun" onClick="laserGun(), compAttack()">Laser Gun</button>
+                        <button type="button" class="btn btn-danger" data-toggle="button" id="ray-gun" onClick="rayGun(), compAttack()">Ray Gun</button>
+                    </div>
+                    <div class="items">
+                        <button type="button" class="btn btn-success" data-toggle="button" id="crystals" onClick="giveCrystals()">Kalaxian Crystals</button>
+                        <button type="button" class="btn btn-success" data-toggle="button" id="microverse-battery" onClick="giveMicroverseBattery()">Microverse Battery</button>
+                        <button type="button" class="btn btn-success" data-toggle="button" id="neutrino-bomb" onClick="giveNeutrinoBomb()">Neutrino Bomb</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 offset-md-6 col-sm-5 offset-sm-2">
+                <div class="comp-player">
+                    <div class="health-bar">
+                        <div>
+                            <h2>Scary Terry's Health:
+                                <span id="comp-health"></span>
+                            </h2>
+                        </div>
+                    </div>
+                    <div>
+                        <h2>Hits:
+                            <span id="comp-hits"></span>
+                        </h2>
+                    </div>
+                    <img src="https://vignette.wikia.nocookie.net/lapis/images/b/b7/ScaryTerry.png/revision/latest?cb=20140527005842" class="scary-terry"
+                        alt="Scary Terry png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/app.js"></script>
+</body>
+
+</html>
