@@ -75,7 +75,10 @@ function reset() {
     rick.hits = 0
     scaryTerry.health = 100
     scaryTerry.hits = 0
-    document.getElementById("result").innerHTML = ``
+    document.getElementById("result").innerHTML = `
+    <img src="https://occ-0-2433-1001.1.nflxso.net/art/34326/5d6e1471b3937f2a08ec0d1f53a8e294f5634326.png" class="title"alt="Rick and Morty">
+    <p>Beat Scary Terry!</p>
+    <p>Select a Mod (green) first then your Attack (red) to add more damage!</p>`
     return update()
 }
 //function to get the sum of the modifiers
@@ -87,22 +90,37 @@ function addMods() {
     }
     return rick.mods.push(totalMod)
 }
-//applies the mods to the character
+//applies the mods to the character only 1 mod per attack
 function giveCrystals() {
-    rick.items.push(items.crystals)
+    if (rick.mods.length > 0) {
+        rick.items.pop(items.crystals);
+        rick.items.push(items.crystals)
+    } else if (rick.mods.length <= 0) {
+        rick.items.push(items.crystals)
+    }
     return addMods()
 }
 function giveMicroverseBattery() {
-    rick.items.push(items.microverseBattery)
+    if (rick.mods.length > 0) {
+        rick.items.pop(items.microverseBattery);
+        rick.items.push(items.microverseBattery)
+    } else if (rick.mods.length <= 0) {
+        rick.items.push(items.microverseBattery)
+    }
     return addMods()
 }
 function giveNeutrinoBomb() {
-    rick.items.push(items.neutrinoBomb)
+    if (rick.mods.length > 0) {
+        rick.items.pop(items.neutrinoBomb);
+        rick.items.push(items.neutrinoBomb)
+    } else if (rick.mods.length <= 0) {
+        rick.items.push(items.neutrinoBomb)
+    }
     return addMods()
 }
 //comp randomized attack
 function compAttack() {
-    var slap = (Math.floor(Math.random() * 12) + 1)
+    var slap = (Math.floor(Math.random() * 10) + 1)
     rick.health -= slap
     rick.hits++
     if (rick.health <= 0) {
